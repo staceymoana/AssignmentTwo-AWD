@@ -1,5 +1,6 @@
 # AssignmentTwo-AWD
-Advanced Web Design | Assignment 2 
+Advanced Web Design | Assignment 2
+
 Phone Fix Booking System
 
 ![Image of index page](https://github.com/staceysike/AssignmentTwo-AWD/blob/master/AWD-A2.PNG)
