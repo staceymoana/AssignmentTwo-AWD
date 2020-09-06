@@ -1,0 +1,406 @@
+* {
+	box-sizing: border-box;
+	font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+#main-header {
+	background-color: #050544;
+	color: white;
+  text-align: center;
+}
+
+#main-header h1 {
+  padding: 0.5em;
+}
+
+.mycontainer {
+  padding: 1em 2em;
+  line-height: 2em;
+}
+
+ul.nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #0c779b;
+}
+
+ul.nav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 0.5em;
+  text-decoration: none;
+}
+
+ul.nav, ul.nav li {
+  float: none;
+}
+
+.nav-item {
+  border: 0.8px solid;
+  border-color: #424242;
+}
+
+.customer-details {
+  background-color: lightskyblue;
+}
+
+.repair-details {
+  background-color: #578dbe;
+}
+
+.courtesy-phone {
+  background-color: rgb(59, 160, 173);
+}
+
+.cost {
+  background-color: rgb(121, 204, 224);
+}
+
+.buttons {
+  background-color: rgb(121, 204, 224);  
+}
+
+.buttons input, .buttons button {
+  margin-bottom: 0.8em;
+}
+
+.courtesy-phone input[type=button] {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+fieldset {
+  border: 1px solid #000;
+}
+
+fieldset input {
+  margin-left: 1em;
+}
+
+form select, input[type=text], textarea, input[type=button], input[type=reset], input[type=submit], input[type=date] {
+  width: 100%;
+  padding: 0.5em;
+}
+
+#item-table {
+  border-collapse: collapse;
+  border: 1px solid;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+#item-table th, #item-table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid;
+}
+
+#item-table th {
+	background-color: rgb(167, 167, 167);
+  text-align:center;
+}
+
+#item-table td {
+  background-color: rgb(218, 218, 218);
+}
+
+#main {
+  background-color: rgb(228, 245, 250);
+}
+
+#question, #extension {
+  background-color: rgb(245, 225, 219);
+  margin: 1em;
+  padding: 2em 1em 1em 1em;
+}
+
+#charger-row {
+  display: none;
+}
+
+textarea {
+  resize: none;
+}
+
+
+#main-footer {
+  background-color: #050544;
+  color: white;
+  text-align: center;
+  padding: 2em;
+}
+
+#div1, #div2 {
+  float: left;
+  width: 135px;
+  height: 135px;
+  margin: 10px;
+  padding: 10px;
+  border: 2px solid #050544;
+  text-align: center;
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (min-width: 600px) {
+  ul.nav li{
+    float: left;
+    width: 50%;
+  }
+
+  .mycontainer {
+    width: 80%;
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  ul.nav {
+    float: right;
+  }
+
+  ul.nav li {
+    width: 15em;
+    float: left;
+  }
+
+  .nav-container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .nav-item {
+    order: 1;
+  }
+
+  .form-container {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .form-item {
+    flex: 33%;
+  }
+
+  #main-header h1 {
+    order: 2;
+  }
+
+  #main-header {
+    height: 25vh;
+  }
+
+  .buttons button, .buttons input {
+    width: 10em;
+    margin-bottom: 0;
+  }
+
+  .buttons {
+    text-align: center;
+  }
+
+  .mycontainer {
+    width: 90%;
+    margin-right: 5%;
+    margin-left: 5%;
+  }
+
+  .courtesy-phone, .cost {
+    height: 50%;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1em;
+  }
+
+  .grid-container fieldset {
+    grid-column-start: 1;
+    grid-column-end: 8;
+  }
+
+  .grid-container label  {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+
+  .grid-container input[type=text], input[type=date], .grid-container select, .grid-container textarea {
+    grid-column-start: 3;
+    grid-column-end: 8;
+  }
+
+  .grid-container table {
+    grid-column-start: 1;
+    grid-column-end: 8;
+  }
+
+  .courtesy-phone input[type="button"] {
+    margin-top: 0;
+    margin-bottom:0;
+  }
+
+  .grid-container #addbtn {
+    grid-column-start: 1;
+  }
+
+  .grid-container #removebtn {
+    grid-column-start: 3;
+  }
+
+  .grid-container #chargerbtn {
+    grid-column-start: 5;
+  }
+
+  #extension input {
+    width: 10%
+  }
+   
+  #invoice-container {
+    margin: 1em 15em;
+    border: 1px solid black;
+  }
+
+  #invoice-header {
+    padding: 3em 1em;
+    background-color: gray;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 1em;
+  }
+  
+  #heading {
+    grid-column-start: 1;
+  }
+  
+  #heading h1 {
+    text-align: left;
+  }
+  
+  #total-header {
+    grid-column-start: 7;
+  }
+  
+  #total-header h2, #total-header p {
+    text-align: right;
+  }
+  
+  
+  .myinvoicecontainer {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(5, auto);
+    grid-gap: 1em;
+    padding: 2em 2em;
+  }
+  
+  #customer-container {
+    grid-column-start: 1;
+    text-align: left;
+  }
+  
+  #repair-job-container {
+    grid-column-start: 5;
+    grid-row-start: 1;
+    text-align: left;
+  }
+
+  #third-section {
+    border-bottom: 1px solid;
+  }
+
+  #repair-details {
+    grid-column-start: 1;
+  }
+
+  #courtesy-details {
+    grid-column-start: 1;
+  }
+
+  #repair-details p {
+    margin-left: 2em;
+  }
+
+  #invoice-table {
+    width: 60%;
+    margin-left: 2em;
+  }
+
+  #totals {
+    grid-column-start: 5;
+    grid-row-start:5;
+    text-align: left;
+  }
+
+  #totals p, #repair-job-container p {
+    margin-left: 2em;
+  }
+
+  #flex {
+    display: flex;
+  }
+
+  #flex-left1 {
+    flex: 50%;
+  }
+
+  #flex-right1 {
+    flex: 50%;
+  }
+
+  #flex-left1 {
+    flex: 40%;
+  }
+
+  #flex-right1 {
+    flex: 60%;
+  }
+
+  #invoice-table {
+    border-collapse: collapse;
+    border: 1px solid;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid rgb(0, 0, 0);
+  }
+
+  #invoice-table th, #invoice-table td {
+    text-align: left;
+    padding: 8px;
+    border: 1px solid;
+  }
+
+  #invoice-table th {
+    text-align:center;
+  }
+
+  #invoice-footer {
+    display: grid;
+    grid-template-columns: repeat(8, auto);
+    grid-gap: 1em;
+  }
+
+  #invoice-footer {
+    border-top: solid 1px;
+    padding: 2em 2em;
+  }
+
+  #footer-one {
+    grid-column-start: 1;
+  }
+  
+  #footer-two {
+    grid-column-start: 8;
+    text-align: right;
+  }
+}

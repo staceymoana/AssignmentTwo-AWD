@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Javascript Extension - Assignment 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+    <link href ="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+</head>
+
+<body id="main">
+        <!------------------------ HEADER/NAV BAR -------------------------->
+    <header id="main-header" class="nav-container">
+        <h1 class="nav-heading">Javascript Extension</h1>
+        <nav>
+            <ul class="nav">
+              <li><a href="index.html" class="nav-item">Home</a></li>
+              <li><a href="extension.html" class="nav-item">Extension</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="mycontainer">
+
+        <section id="extension">
+                <p><b>Statement of authenticity</b><br>
+                I confirm that:
+                <ul>
+                    <li>This is an original assessment and is entirely my own work.</li>
+                    <li>It contains no material previously published or written by another person or myself except where due acknowledgement is made in the text.</li>
+                    <li>No  material which to a substantial extent, has been submitted for any other academic course, is included without acknowledgement.</li>
+                </ul>
+        </section>
+
+        <section id="extension">
+            <h1>Date Picker</h1>
+            <p>Used when entering dates on the main form. This is a jQuery plug-in and produces a more user-friendly way to pick a date.</p>
+        </section>
+
+        <section id="extension">
+            <h1>Drag and Drop</h1>
+            <p>This is a feature where a user can drag and drop an image of a device using Javascript. This could be used when adding a courtesy phone.</p>
+            <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            	<img src="images/phone.png" draggable="true" ondragstart="drag(event)" id="drag1" width="100" height="100">
+            </div>
+            <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)">          
+            </div>
+            <div class="clearfix"></div>
+        </section>
+
+        <section id="extension">
+            <h1>Get Current Location</h1>
+            <p>This Javascript feature can be used to acquire the user's current location and calculate distance or show the route to the nearest Phone Fix location.</p>
+            <p>Click the button to get your current location.</p>
+            <button onclick="getLocation()">Click me!</button>
+            <p id="location"></p>
+        </section>
+
+        <section id="extension">
+            <h1>Search FAQS</h1>
+            <p>This feature enables the user to search through the FAQs page and get relevant questions and answers based on their input. This uses AJAX with some jQuery to get the data. </p>
+            <label>Search:</label><br>
+            <input type="text" id="searchInput">
+            <button onclick="searchFunction()">Search</button>
+            <p id="searchResult"></p>
+        </section>
+
+        <section id="extension">
+            <h1>Interactive Map</h1>
+            <p>This interactive map would show users the different locations of the Phone Fix shop. They can hover their cursor over the map and see the address of each location. </p><br>
+            <div id="map"></div>
+        </section>
+
+    </div>
+
+    <script src="js/script.js"></script>
+
+<footer id="main-footer">
+    <p>Advanced Web Design, Copyright &copy; 2019</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,22 @@
+[
+        {
+            "question": "What is the bond for?",
+            "answer": "If wanting to recieve a courtesy phone while your phone is being fixed, a bond is applied to your invoice for security. The total of the bond is refunded when returned in the condition it was given."
+        },
+        {
+            "question": "Do I need a charger with my courtesy phone?",
+            "answer": "No, a charger is optional."
+        },
+        {
+            "question": "Why do I have to pay a service fee?",
+            "answer": "A service fee is only charged for repairs to devices that are no longer under warranty. Business customers are not charged a service fee in accord with the terms on their contract."
+        },
+        {
+            "question": "Why isn't my phone under warranty?",
+            "answer": "Your purchase date must be less than 2 years old which is calculated from the purchase date."
+        },
+        {
+            "question": "How long will my repair take?",
+            "answer": "Depends on the status of your broken phone. It normally takes 5-7 working days."
+        }
+]

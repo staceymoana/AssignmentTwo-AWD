@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Phone Fix Booking System - Assignment 2</title>
+	<link rel="stylesheet" href="css/style.css">
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script> 
+<link href ="https://code.jquery.com/ui/1.12.0/themes/smoothness/jquery-ui.css" rel="stylesheet">
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js" integrity="sha256-eGE6blurk5sHj+rmkfsGYeKyZx3M4bG+ZlFyA7Kns7E=" crossorigin="anonymous"></script>
+
+
+</head>
+<body onload="disableCheckbox(); ">
+	<!------------------------ HEADER/NAV BAR -------------------------->
+<header id="main-header" class="nav-container">
+	<h1 class="nav-heading">Phone Fix Booking System</h1>
+	<nav>
+		<ul class="nav">
+		  <li><a href="index.html" class="nav-item">Home</a></li>
+		  <li><a href="extension.html" class="nav-item">Extension</a></li>
+		</ul>
+	</nav>
+</header>
+
+<form id="main-form" name="main-form">
+	<div class="form-container">
+	<!------------------------ CUSTOMER DETAILS -------------------------->
+	<section class="customer-details form-item">
+		<div class="mycontainer">
+			<h2>Customer Details</h2>
+			<!----------------------- CUSTOMER TYPE ------------------------->
+			<div class="grid-container">
+			<fieldset>
+				<legend>Customer Type *</legend>
+				<label>Consumer</label> <input type="radio" name="customer-type" id="consumer" value="consumer" checked="checked" onchange="consumerSelect()"><br>
+				<label>Business</label> <input type="radio" name="customer-type" id="business" value="business" onchange="businessSelect()">
+			</fieldset>
+
+			<!----------------------- CUSTOMER TITLE ------------------------->
+			<label for="title">Title:*</label><br>
+			<select id="title-select" name="title">
+				<option value="None">None</option>
+				<option value="Mr.">Mr.</option>
+				<option value="Mrs.">Mrs.</option>
+				<option value="Ms.">Ms.</option>
+				<option value="Miss.">Miss.</option>
+				<option value="Dr.">Dr.</option>
+			</select>
+
+			<!---------------------- CUSTOMER F NAME ------------------------>
+			<label for="first-name">First Name:*</label><br>
+			<input  type="text" id="f-name" name="f-name">
+
+			<!---------------------- CUSTOMER L NAME ------------------------>
+			<label for="last-name">Last Name:*</label><br>
+			<input type="text" id="l-name" name="l-name">
+
+			<!---------------------- CUSTOMER STREET ------------------------>
+			<label for="street">Street:*</label><br>
+			<input type="text" id="street" name="street">
+
+			<!---------------------- CUSTOMER SUBURB ------------------------>
+			<label for="suburb">Suburb:*</label><br>
+			<input type="text" id="suburb" name="suburb">
+
+			<!----------------------- CUSTOMER CITY ------------------------->
+			<label for="city">City:*</label><br>
+			<input type="text" id="city" name="city">
+
+			<!--------------------- CUSTOMER POSTCODE ----------------------->
+			<label for="postcode">Postcode:*</label><br>
+			<input type="text" id="postcode" name="postcode">
+
+			<!--------------------- CUSTOMER NUMBER ----------------------->
+			<label for="phone-number">Phone Number:*</label><br>
+			<input type="text" id="phone-number" name="phone-number">
+
+			<!--------------------- CUSTOMER EMAIL ----------------------->
+			<label for="email">Email:*</label><br>
+			<input type="text" id="email" name="email">
+		</div>
+		</div>
+	</section>
+
+		<!------------------------- REPAIR DETAILS --------------------------->
+	<section class="repair-details form-item">
+		<div class="mycontainer">
+			<h2>Repair Details</h2>
+
+			<!---------------------- PURCH DATE ------------------------>
+			<div class="grid-container">
+			<label for="purchase-date" onchange="checkWarranty()">Purchase Date:*</label><br>
+			<input type="text" id="p-date" name="p-date">
+
+			<!---------------------- REPAIR DATE ------------------------>
+			<label for="repair-date">Repair Date:*</label><br>
+			<input type="text" id="r-date" name="r-date">
+			
+			<!-------------------- WARRANTY SELECT ---------------------->
+			<label for="warranty">Warranty:</label>
+			<select id="warranty-select" onchange="checkWarranty()">
+				<option>None</option>
+				<option>2-year Warranty</option>
+			</select>
+			<!------------------------ WARRANTY -------------------------->
+			<fieldset>
+				<legend>Under Warranty</legend>
+				<p>Warranty: <input type="checkbox" id="warranty" name="warranty" value="warranty"></p>
+			</fieldset>
+
+			<!------------------------ IMEI NUM -------------------------->
+			<label for="imei-num">IMEI Number:*</label><br>
+			<input type="text" id="imei-num" name="imei-num">
+
+			<!-------------------------- MAKE ---------------------------->
+			<label for="make">Make:*</label><br>
+			<select id="make-select" name="make-select">
+				<option value="None">None</option>
+				<option value="Apple">Apple</option>
+				<option value="LG">LG</option>
+				<option value="Motorola">Motorola</option>
+				<option value="Nokia">Nokia</option>
+				<option value="Samsung">Samsung</option>
+				<option value="Sony">Sony</option>
+				<option value="Other">Other</option>
+			</select>
+
+			<!---------------------- MODEL NUM ------------------------>
+			<label for="model-num">Model Number:</label><br>
+			<input type="text" id="model-num" name="model-num">
+
+			<!------------------------ FAULT -------------------------->
+			<label for="make">Fault Category:*</label><br>
+			<select id="fault-select" name="fault-select">
+				<option value="None">None</option>
+				<option value="Battery">Battery</option>
+				<option value="Charging">Charging</option>
+				<option value="Screen">Screen</option>
+				<option value="SD-Storage">SD-Storage</option>
+				<option value="Software">Software</option>
+				<option value="Other">Other</option>
+			</select>
+
+			<!-------------------- DESCRIPTION ---------------------->
+			<label for="description">Description:*</label><br>
+			<textarea id="description" name="description" rows="6"></textarea>
+		</div>
+		</div>
+	</section>
+
+	<div class="double form-item">
+		<!------------------------- COURTESY PHONE --------------------------->
+	<section class="courtesy-phone">
+		<div class="mycontainer">
+			<h2>Courtesy Phone</h2>
+			<div class="grid-container">
+			<!------------------------ TYPE -------------------------->
+			<label for="item">Item Type:</label><br>
+			<select id="item-select" name="item-select" onchange="courtesyPriceChange();">
+				<option value="None">None</option>
+				<option value="iPhone">iPhone</option>
+				<option value="Other-phone">Other phone</option>
+			</select>
+				<input type="button" id="addbtn" value="Add" onclick="addItem()">
+				<input type="button" id="removebtn" value="Remove" onclick="removeItem()">
+				<input type="button" id="chargerbtn" value="Add Charger" onclick="addCharger()" style="display: none">
+
+			
+			<table id="item-table" style="overflow-x:auto; display:none">
+				<tr>
+				<th>Item</th>
+				<th>Cost</th>
+				</tr>
+				<tr>
+				<td id="phone-row" name="phone"></td>
+				<td id="cost"></td>
+				</tr>
+				<tr id="charger-row">
+				<td name="charger">Charger</td>
+				<td name="charger-cost">$30</td>
+				</tr>
+			</table>
+		</div>
+		</div>
+	</section>
+	
+		<!------------------------------ COST -------------------------------->
+	<section class="cost">
+		<div class="mycontainer">
+			<h2>Cost</h2>
+			<div class="grid-container">
+			<!------------------------ BOND -------------------------->
+			<label for="bond">Bond</label><br>
+			<input type="text" id="bond" name="bond" value="$0.00" onkeypress="return false;" onkeydown="return false;"/>
+
+			<!--------------------- SERVICE FEE ----------------------->
+			<label for="service-fee">Service Fee:</label><br>
+			<input type="text" id="service-fee" name="service-fee" value="$0.00" onkeypress="return false;" onkeydown="return false;"/>
+
+			<!------------------------ TOTAL -------------------------->
+			<label for="total">Total:</label><br>
+			<input type="text" id="total" name="total" value="$0.00" onkeypress="return false;" onkeydown="return false;"/>
+
+			<!------------------------- GST --------------------------->
+			<label for="gst">GST:</label><br>
+			<input type="text" id="gst" name="gst" value="$0.00" onkeypress="return false;" onkeydown="return false;"/>
+
+			<!---------------------- TOTAL&GST ------------------------>
+			<label for="totalgst">Total(+GST):</label><br>
+			<input type="text" id="totalgst" name="totalgst" value="$0.00" onkeypress="return false;" onkeydown="return false;"/>
+		</div>
+		</div>
+	</section>
+</div>
+</div>
+	<section class="buttons">
+		<!----------------------- BUTTONS ------------------------->
+		<div class="mycontainer">
+			<input type="reset" value="Reset">
+			<input type="submit" value="Submit">
+			<input type="button" value="FAQ" onclick="openFAQ()">
+		</div>
+	</section>
+</form>
+
+<script src="js/script.js"></script> 
+
+</body>
+<footer id="main-footer">
+	<p>Advanced Web Design, Copyright &copy; 2019</p>
+</footer>
+</html>
+
